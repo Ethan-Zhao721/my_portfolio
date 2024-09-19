@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { ReactTyped } from 'react-typed';
+
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="intro">
+        <ReactTyped
+          strings={[
+            "Hi, I'm Ethan.",
+            "I'm a Full Stack Developer.",
+            "I specialize in React, NodeJS, and Java ...",
+            "Welcome to My Space and Talk to Me",
+            "Let's connect! AI robot is waking up...."           
+          ]}
+          typeSpeed={40}
+          backSpeed={55}
+          backDelay={2500}        // Delay before erasing (in milliseconds)
+          loop={false}            // Do not loop after finishing the last word
+          showCursor={true}       // Show the cursor at the end          
+        />
+      </div>
     </div>
   );
 }

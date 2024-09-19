@@ -1,28 +1,27 @@
-import React from 'react';
-import { ReactTyped } from 'react-typed';
+import React, { useState } from 'react';
+
+import ChatWindow from './components/ChatWindow/ChatWindow';
+import TypingEffect from './components/TypeEffect/TypingEffect';
+import './App.scss';  // Assuming you'll also use SCSS for App styling
 
 
-import './App.css';
 
 function App() {
+  const [showChatWindow, setShowChatWindow] = useState(false);
+  const handleTypingComplete = () => {
+    setShowChatWindow(true);
+  };
+  
   return (
     <div className="App">
-      <div className="intro">
-        <ReactTyped
-          strings={[
-            "Hi, I'm Ethan.",
-            "I'm a Full Stack Developer.",
-            "I specialize in React, NodeJS, and Java ...",
-            "Welcome to My Space and Talk to Me",
-            "Let's connect! AI robot is waking up...."           
-          ]}
-          typeSpeed={40}
-          backSpeed={55}
-          backDelay={2500}        // Delay before erasing (in milliseconds)
-          loop={false}            // Do not loop after finishing the last word
-          showCursor={true}       // Show the cursor at the end          
-        />
-      </div>
+        <div className="left-section">
+          <TypingEffect onTypingComplete={handleTypingComplete} />
+        </div>
+        
+        <div className="right-section" >
+          {showChatWindow && <ChatWindow/>}
+        </div>
+        
     </div>
   );
 }

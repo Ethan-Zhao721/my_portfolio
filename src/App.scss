@@ -1,0 +1,29 @@
+/* App.scss */
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  visibility: hidden; /* Initially hidden */
+}
+
+.right-section > div {
+  visibility: visible;
+}
